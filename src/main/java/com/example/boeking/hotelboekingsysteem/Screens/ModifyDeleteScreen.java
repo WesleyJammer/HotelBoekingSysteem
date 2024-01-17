@@ -1,10 +1,6 @@
-package com.example.boeking.hotelboekingsysteem;
+package com.example.boeking.hotelboekingsysteem.Screens;
 
-import com.example.boeking.hotelboekingsysteem.Screens.AddScreen;
-import com.example.boeking.hotelboekingsysteem.Screens.BookingScreen;
-import com.example.boeking.hotelboekingsysteem.Screens.ModifyDeleteScreen;
-import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
+import com.example.boeking.hotelboekingsysteem.HelloApplication;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -14,25 +10,23 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
-import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
-import java.io.IOException;
+import java.util.PrimitiveIterator;
 
-public class HelloApplication extends Application {
+public class ModifyDeleteScreen {
+
+private final Stage stage;
+private final Scene modifyDeletescene;
 
 
 
-    @Override
-    public void start(Stage stage ) throws IOException {
+    public ModifyDeleteScreen(Stage stage, Scene modifyDeletescene) {
+        this.stage = stage;
+        this.modifyDeletescene = modifyDeletescene;
 
         HBox root = new HBox();
-        Scene scene = new Scene(root, 900, 600);
-        scene.getStylesheets().add(HelloApplication.class.getResource("stylesheets/helloapplication.css").toString());
-//        scene.getStylesheets().add(HelloApplication.class.getResource("fonts/Salsa-Regular.ttf").toString());
-
-        Font font = Font.loadFont(HelloApplication.class.getResource("fonts/Salsa-Regular.ttf").toString(), 20);
-
+        modifyDeletescene.getStylesheets().add(HelloApplication.class.getResource("stylesheets/modifydeletescreen.css").toString());
 
         VBox sidebar = new VBox();
         sidebar.setPrefSize(165,600);
@@ -103,12 +97,12 @@ public class HelloApplication extends Application {
         wijzigAnnuleerIconText.setText("Wijzig/Annuleer");
         wijzigAnnuleerIconText.setId("menuText");
 
-wijzigAnnuleerMenu.setOnMouseClicked(e->{
+        wijzigAnnuleerMenu.setOnMouseClicked(e->{
 
-    ModifyDeleteScreen md = new ModifyDeleteScreen(stage,new Scene(new HBox(),900,600));
-    stage.setScene(md.getModifyDeletescene());
-        }
-);
+                    ModifyDeleteScreen md = new ModifyDeleteScreen(stage,new Scene(new HBox(),900,600));
+                    stage.setScene(md.getModifyDeletescene());
+                }
+        );
 
         VBox voegToeMenu = new VBox();
         voegToeMenu.setSpacing(5);
@@ -129,8 +123,8 @@ wijzigAnnuleerMenu.setOnMouseClicked(e->{
 
         voegToeMenu.setOnMouseClicked( e->{
 
-            AddScreen as = new AddScreen(stage,new Scene(new HBox(),900,600));
-            stage.setScene(as.getAddscene());
+                    AddScreen as = new AddScreen(stage,new Scene(new HBox(),900,600));
+                    stage.setScene(as.getAddscene());
 
                 }
 
@@ -141,33 +135,28 @@ wijzigAnnuleerMenu.setOnMouseClicked(e->{
 
 
 
-        FlowPane welcome = new FlowPane();
-        welcome.setPrefSize(735,600);
-        welcome.setAlignment(Pos.CENTER);
-        welcome.setId("welcome");
-
-        Label welcomeText = new Label();
-        welcomeText.setText("Welkom");
-        welcomeText.setId("welcomeText");
-        welcomeText.setPadding(new Insets(0,40,100,0));
 
 
-         menuTitle.getChildren().add(menuTitleText);
-         boekingMenu.getChildren().addAll(boekingIcon,boekingIconText);
-         wijzigAnnuleerMenu.getChildren().addAll(wijzigAnnuleerIcon,wijzigAnnuleerIconText);
-         voegToeMenu.getChildren().addAll(toevoegenIcon,toevoegenIconText);
+
+        menuTitle.getChildren().add(menuTitleText);
+        boekingMenu.getChildren().addAll(boekingIcon,boekingIconText);
+        wijzigAnnuleerMenu.getChildren().addAll(wijzigAnnuleerIcon,wijzigAnnuleerIconText);
+        voegToeMenu.getChildren().addAll(toevoegenIcon,toevoegenIconText);
 
 
         sidebar.getChildren().addAll(menuTitle,boekingMenu,wijzigAnnuleerMenu,voegToeMenu);
-        welcome.getChildren().add(welcomeText);
 
-        root.getChildren().addAll(sidebar,welcome);
-        stage.setTitle("Hello!");
-        stage.setScene(scene);
-        stage.show();
+
+
+        root.getChildren().addAll(sidebar);
+
+        modifyDeletescene.setRoot(root);
+        stage.setScene(modifyDeletescene);
+        stage.setTitle("Wijzig/Annuleer");
+
     }
 
-    public static void main(String[] args) {
-        launch();
+    public Scene getModifyDeletescene() {
+        return modifyDeletescene;
     }
 }
