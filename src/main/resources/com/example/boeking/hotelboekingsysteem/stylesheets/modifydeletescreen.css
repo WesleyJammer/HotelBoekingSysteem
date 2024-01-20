@@ -23,3 +23,9 @@
     -fx-border-width: 2 0 2 0;
 
 }
+
+#wijzigAnnuleerTitle{
+    -fx-font-family: 'Salsa-Regular',serif;
+    -fx-font-size: 40;
+    -fx-text-fill: #E1C8C8;
+}

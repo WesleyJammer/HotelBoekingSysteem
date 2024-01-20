@@ -31,9 +31,24 @@ private final Scene modifyDeletescene;
 
         Sidebar sb = new Sidebar(stage);
 
+        VBox wijzigAnnuleerContainer = new VBox();
+        wijzigAnnuleerContainer.setPrefSize(735,600);
+
+        FlowPane wijzigAnnuleerTitleContainer = new FlowPane();
+        wijzigAnnuleerTitleContainer.setAlignment(Pos.CENTER);
+        wijzigAnnuleerTitleContainer.setPadding(new Insets(20,50,0,0));
+
+        Label wijzigAnnuleerTitle = new Label();
+        wijzigAnnuleerTitle.setText("Wijzig/Annuleer");
+        wijzigAnnuleerTitle.setId("wijzigAnnuleerTitle");
+
+        wijzigAnnuleerTitleContainer.getChildren().add(wijzigAnnuleerTitle);
+
+        wijzigAnnuleerContainer.getChildren().addAll(wijzigAnnuleerTitleContainer);
+
+        root.getChildren().addAll(sb,wijzigAnnuleerContainer);
 
 
-        root.getChildren().addAll(sb);
 
         modifyDeletescene.setRoot(root);
         stage.setScene(modifyDeletescene);

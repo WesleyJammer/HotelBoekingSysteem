@@ -28,11 +28,25 @@ private final Scene bookingscene;
         HBox root = new HBox();
         bookingscene.getStylesheets().add(HelloApplication.class.getResource("stylesheets/bookingscreen.css").toString());
 
+
      Sidebar sb = new Sidebar(stage);
 
+        VBox boekingContainer = new VBox();
+        boekingContainer.setPrefSize(735,600);
 
+        FlowPane boekingTitleContainer = new FlowPane();
+        boekingTitleContainer.setAlignment(Pos.CENTER);
+        boekingTitleContainer.setPadding(new Insets(20,50,0,0));
 
-        root.getChildren().addAll(sb);
+        Label boekingTitle = new Label();
+        boekingTitle.setText("Boekingen");
+        boekingTitle.setId("boekingTitle");
+
+        boekingTitleContainer.getChildren().add(boekingTitle);
+
+        boekingContainer.getChildren().addAll(boekingTitleContainer);
+
+        root.getChildren().addAll(sb,boekingContainer);
 
    bookingscene.setRoot(root);
    stage.setScene(bookingscene);
