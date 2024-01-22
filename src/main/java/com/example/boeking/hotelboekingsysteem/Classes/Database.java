@@ -1,21 +1,21 @@
 package com.example.boeking.hotelboekingsysteem.Classes;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
+import javafx.scene.control.DatePicker;
+
+import java.sql.*;
 
 public class Database {
 
-    private Connection connection;
+    private Connection conn;
 
-    public Database(Connection connection) {
-        this.connection = connection;
+    public Database() {
+        this.conn = conn;
 
 
         String url = "jdbc:mysql://localhost:3306/hotel_boeking_systeem?user=root&password=";
 
         try {
-            connection = DriverManager.getConnection(url);
+            conn = DriverManager.getConnection(url);
 
 
         } catch (SQLException e) {
@@ -23,6 +23,47 @@ public class Database {
         }
     }
 
+public void opslaanBoeking(String voorNaam, String achterNaam, String email, Integer telefoon, Integer aantalPersonen, Timestamp aankomst, Timestamp vertrek, String kamerType){
 
 
+    try {
+        Statement stm = this.conn.createStatement();
+
+
+        stm.addBatch("INSERT INTO klant(voor_naam,achter_naam,email,telefoon_nummer) VALUES ('"+voorNaam+"','"+achterNaam+"','"+email+"',"+telefoon+")");
+        stm.executeBatch();
+
+        ResultSet rs = stm.getGeneratedKeys();
+        rs.next();
+        int klantId = rs.getInt(1);
+
+        stm.addBatch("INSERT INTO boeking(aantal_personen,aankomst_datum,vertrek_datum,klant_id)VALUES ("+aantalPersonen+",'"+aankomst+"','"+vertrek+"',"+klantId+")");
+        stm.executeBatch();
+
+
+        rs = stm.getGeneratedKeys();
+        rs.next();
+        int boekingId = rs.getInt(1);
+
+        rs = stm.executeQuery("SELECT  kamer_type_id FROM kamer_type WHERE naam = '"+kamerType+"'");
+        rs.next();
+        int kamerTypeId = rs.getInt(1);
+
+        rs = stm.executeQuery("SELECT kamer_id FROM kamer WHERE kamer_type_id =" + kamerTypeId);
+        rs.next();
+        int kamerId = rs.getInt(1);
+
+        stm.addBatch("INSERT INTO boeking_kamer(boeking_id,kamer_id) VALUES ("+boekingId+","+kamerId+") ");
+        stm.executeBatch();
+       
+
+    } catch (SQLException e) {
+        throw new RuntimeException(e);
+    }
+
+}
+
+    public Connection getConn() {
+        return conn;
+    }
 }

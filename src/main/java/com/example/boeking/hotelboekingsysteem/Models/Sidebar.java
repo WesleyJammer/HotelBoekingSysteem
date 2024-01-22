@@ -1,5 +1,6 @@
 package com.example.boeking.hotelboekingsysteem.Models;
 
+import com.example.boeking.hotelboekingsysteem.Classes.Database;
 import com.example.boeking.hotelboekingsysteem.HelloApplication;
 import com.example.boeking.hotelboekingsysteem.Screens.AddScreen;
 import com.example.boeking.hotelboekingsysteem.Screens.BookingScreen;
@@ -18,10 +19,14 @@ import javafx.stage.Stage;
 public class Sidebar extends VBox{
 
     private Stage stage;
+    private Database db;
 
-    public Sidebar (Stage stage) {
+
+
+    public Sidebar (Stage stage, Database db) {
 
         this.stage = stage;
+        this.db = db;
 
         VBox sidebar = new VBox();
         sidebar.setPrefSize(165,600);
@@ -66,7 +71,7 @@ public class Sidebar extends VBox{
         boekingMenu.setOnMouseClicked(e->{
 
 
-            BookingScreen bs = new BookingScreen(stage, new Scene(new HBox(), 900, 600));
+            BookingScreen bs = new BookingScreen(stage, new Scene(new HBox(), 900, 600),db);
             stage.setScene(bs.getBookingscene());
 
 
@@ -94,7 +99,7 @@ public class Sidebar extends VBox{
 
         wijzigAnnuleerMenu.setOnMouseClicked(e->{
 
-                    ModifyDeleteScreen md = new ModifyDeleteScreen(stage,new Scene(new HBox(),900,600));
+                    ModifyDeleteScreen md = new ModifyDeleteScreen(stage,new Scene(new HBox(),900,600),db);
                     stage.setScene(md.getModifyDeletescene());
                 }
         );
@@ -118,10 +123,12 @@ public class Sidebar extends VBox{
 
         voegToeMenu.setOnMouseClicked( e->{
 
-                    AddScreen as = new AddScreen(stage,new Scene(new HBox(),900,600));
+                    AddScreen as = new AddScreen(stage,new Scene(new HBox(),900,600),db);
                     stage.setScene(as.getAddscene());
 
                 }
+
+
 
 
 

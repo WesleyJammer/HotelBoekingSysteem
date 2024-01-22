@@ -1,5 +1,6 @@
 package com.example.boeking.hotelboekingsysteem.Screens;
 
+import com.example.boeking.hotelboekingsysteem.Classes.Database;
 import com.example.boeking.hotelboekingsysteem.HelloApplication;
 import com.example.boeking.hotelboekingsysteem.Models.Sidebar;
 import javafx.geometry.Insets;
@@ -11,6 +12,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 import javafx.stage.Stage;
 
+import java.sql.Connection;
 import java.sql.Timestamp;
 import java.time.LocalDate;
 
@@ -26,16 +28,19 @@ public class AddScreen {
 
 
 
-    public AddScreen(Stage stage, Scene addscene) {
+    public AddScreen(Stage stage, Scene addscene, Database db) {
 
         this.stage = stage;
         this.addscene = addscene;
 
 
+
         HBox root = new HBox();
         addscene.getStylesheets().add(HelloApplication.class.getResource("stylesheets/addscreen.css").toString());
 
-        Sidebar sb = new Sidebar(stage);
+
+
+        Sidebar sb = new Sidebar(stage,db);
 
         VBox voegToeContainer = new VBox();
         voegToeContainer.setPrefSize(735,600);
@@ -135,6 +140,23 @@ public class AddScreen {
 
         Button btnOpslaan = new Button("Opslaan");
         btnOpslaan.setId("voegToeInput");
+
+        btnOpslaan.setOnAction(e->{
+Connection conn = db.getConn();
+
+            String voorNaam = txtVoorNaam.getText();
+            String achterNaam = txtAchterNaam.getText();
+            String email = txtEmail.getText();
+            int telefoon = Integer.parseInt(txtTelefoon.getText());
+            int aantalPersonen = Integer.parseInt(txtAantalPersonen.getText());
+           Timestamp aankomst = Timestamp.valueOf(dateAankomst.getValue().atStartOfDay());
+           Timestamp vertrek = Timestamp.valueOf(dateVertrek.getValue().atStartOfDay());
+            String kamerType = cmbKamerType.getValue().toString();
+
+            if (aankomst != null && vertrek != null) { db.opslaanBoeking(voorNaam,achterNaam,email, telefoon, aantalPersonen, aankomst, vertrek, kamerType);}
+
+
+        });
 
 
         voegToeInput.add(txtVoorNaam,0,1);

@@ -1,5 +1,6 @@
 package com.example.boeking.hotelboekingsysteem;
 
+import com.example.boeking.hotelboekingsysteem.Classes.Database;
 import com.example.boeking.hotelboekingsysteem.Models.Sidebar;
 import com.example.boeking.hotelboekingsysteem.Screens.AddScreen;
 import com.example.boeking.hotelboekingsysteem.Screens.BookingScreen;
@@ -26,17 +27,19 @@ public class HelloApplication extends Application {
 
 
     @Override
-    public void start(Stage stage ) throws IOException {
+    public void start(Stage stage) throws IOException {
 
         HBox root = new HBox();
         Scene scene = new Scene(root, 900, 600);
         scene.getStylesheets().add(HelloApplication.class.getResource("stylesheets/helloapplication.css").toString());
 //        scene.getStylesheets().add(HelloApplication.class.getResource("fonts/Salsa-Regular.ttf").toString());
 
+        stage.setResizable(false);
+
         Font font = Font.loadFont(HelloApplication.class.getResource("fonts/Salsa-Regular.ttf").toString(), 20);
 
-
-        Sidebar sb = new Sidebar(stage);
+        Database db = new Database();
+        Sidebar sb = new Sidebar(stage,db);
 
 
 

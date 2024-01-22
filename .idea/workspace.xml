@@ -6,16 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="ddfe08d2-89a0-4e5f-abe0-15fc539ce95a" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/boeking/hotelboekingsysteem/Classes/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/boeking/hotelboekingsysteem/Classes/Database.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/boeking/hotelboekingsysteem/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/boeking/hotelboekingsysteem/HelloApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/boeking/hotelboekingsysteem/Models/Sidebar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/boeking/hotelboekingsysteem/Models/Sidebar.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/boeking/hotelboekingsysteem/Screens/AddScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/boeking/hotelboekingsysteem/Screens/AddScreen.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/boeking/hotelboekingsysteem/Screens/BookingScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/boeking/hotelboekingsysteem/Screens/BookingScreen.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/boeking/hotelboekingsysteem/Screens/ModifyDeleteScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/boeking/hotelboekingsysteem/Screens/ModifyDeleteScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/boeking/hotelboekingsysteem/stylesheets/HelloApplication.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/boeking/hotelboekingsysteem/stylesheets/HelloApplication.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/boeking/hotelboekingsysteem/stylesheets/addscreen.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/boeking/hotelboekingsysteem/stylesheets/addscreen.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/boeking/hotelboekingsysteem/stylesheets/bookingscreen.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/boeking/hotelboekingsysteem/stylesheets/bookingscreen.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/boeking/hotelboekingsysteem/stylesheets/modifydeletescreen.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/boeking/hotelboekingsysteem/stylesheets/modifydeletescreen.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -124,7 +120,9 @@
       <workItem from="1705656054765" duration="29000" />
       <workItem from="1705656233056" duration="41000" />
       <workItem from="1705656389761" duration="7942000" />
-      <workItem from="1705747613044" duration="8687000" />
+      <workItem from="1705747613044" duration="16638000" />
+      <workItem from="1705840355920" duration="9363000" />
+      <workItem from="1705920603740" duration="5822000" />
     </task>
     <servers />
   </component>
@@ -136,13 +134,18 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/example/boeking/hotelboekingsysteem/HelloApplication.java</url>
-          <line>56</line>
+          <line>59</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/example/boeking/hotelboekingsysteem/Screens/BookingScreen.java</url>
-          <line>41</line>
+          <line>46</line>
           <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/boeking/hotelboekingsysteem/HelloApplication.java</url>
+          <line>40</line>
+          <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
