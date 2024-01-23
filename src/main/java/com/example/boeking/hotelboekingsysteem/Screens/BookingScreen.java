@@ -1,5 +1,6 @@
 package com.example.boeking.hotelboekingsysteem.Screens;
 
+import com.example.boeking.hotelboekingsysteem.Classes.Boeking;
 import com.example.boeking.hotelboekingsysteem.Classes.Database;
 import com.example.boeking.hotelboekingsysteem.HelloApplication;
 import com.example.boeking.hotelboekingsysteem.Models.Sidebar;
@@ -18,7 +19,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
-public class BookingScreen {
+public class BookingScreen  {
 private final Stage stage;
 private final Scene bookingscene;
 
@@ -47,28 +48,47 @@ private final Scene bookingscene;
         boekingTitle.setText("Boekingen");
         boekingTitle.setId("boekingTitle");
 
+        FlowPane tableViewContainer = new FlowPane();
+        tableViewContainer.setPrefWidth(600);
+        tableViewContainer.setAlignment(Pos.BOTTOM_CENTER);
+        tableViewContainer.setPadding(new Insets(150,50,0,0));
+
+
         TableView tv = new TableView<>();
+        tv.setId("tableview");
 
-        TableColumn col0 = new TableColumn<>("Boeking ID");
-        col0.setCellValueFactory(new PropertyValueFactory<>("boeking_id"));
 
-        TableColumn col1 = new TableColumn<>(" Voornaam");
-        col1.setCellValueFactory(new PropertyValueFactory<>("voor_naam"));
+        TableColumn col0 = new TableColumn<Boeking, Integer>("Boeking ID");
+        col0.setCellValueFactory(new PropertyValueFactory<>("boekingId"));
 
-        TableColumn col2 = new TableColumn<>(" Achternaam");
-        col1.setCellValueFactory(new PropertyValueFactory<>("achter_naam"));
+        TableColumn col1 = new TableColumn<Boeking, String>(" Voornaam");
+        col1.setCellValueFactory(new PropertyValueFactory<>("voorNaam"));
 
-        TableColumn col3 = new TableColumn<>(" Email");
-        col1.setCellValueFactory(new PropertyValueFactory<>("email"));
+        TableColumn col2 = new TableColumn<Boeking, String>(" Achternaam");
+        col2.setCellValueFactory(new PropertyValueFactory<>("achterNaam"));
 
-        TableColumn col4 = new TableColumn<>(" Telefoon nummer");
-        col1.setCellValueFactory(new PropertyValueFactory<>("telefoon_nummer"));
+        TableColumn col3 = new TableColumn<Boeking, String>(" Email");
+        col3.setCellValueFactory(new PropertyValueFactory<>("email"));
+
+        TableColumn col4 = new TableColumn<Boeking, String>(" Telefoon nummer");
+        col4.setCellValueFactory(new PropertyValueFactory<>("telefoon"));
 
         tv.getColumns().addAll(col0,col1,col2,col3,col4);
+        tv.getItems().addAll(db.geefAlleBoekingen());
+
+       tv.setOnMouseClicked(e->{
+          Boeking boeking = (Boeking) tv.getSelectionModel().getSelectedItem();
+
+          BoekingViewScreen bvs = new BoekingViewScreen(stage, boeking,new Scene(new HBox(),900,600));
+          stage.setScene(bvs.getScene());
+        });
+
 
         boekingTitleContainer.getChildren().add(boekingTitle);
 
-        boekingContainer.getChildren().addAll(boekingTitleContainer,tv);
+        tableViewContainer.getChildren().add(tv);
+
+        boekingContainer.getChildren().addAll(boekingTitleContainer,tableViewContainer);
 
         root.getChildren().addAll(sb,boekingContainer);
 
