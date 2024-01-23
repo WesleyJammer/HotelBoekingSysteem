@@ -31,8 +31,9 @@ public class HelloApplication extends Application {
 
         HBox root = new HBox();
         Scene scene = new Scene(root, 900, 600);
+
         scene.getStylesheets().add(HelloApplication.class.getResource("stylesheets/helloapplication.css").toString());
-//        scene.getStylesheets().add(HelloApplication.class.getResource("fonts/Salsa-Regular.ttf").toString());
+
 
         stage.setResizable(false);
 

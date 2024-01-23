@@ -8,12 +8,9 @@ import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
-import javafx.scene.control.Tab;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
@@ -22,6 +19,7 @@ import javafx.stage.Stage;
 public class BookingScreen  {
 private final Stage stage;
 private final Scene bookingscene;
+private static Scene storedScene;
 
 
 
@@ -30,6 +28,8 @@ private final Scene bookingscene;
 
        this.stage = stage;
        this.bookingscene = bookingscene;
+
+
 
         HBox root = new HBox();
         bookingscene.getStylesheets().add(HelloApplication.class.getResource("stylesheets/bookingscreen.css").toString());
@@ -56,6 +56,7 @@ private final Scene bookingscene;
 
         TableView tv = new TableView<>();
         tv.setId("tableview");
+        tv.setPrefWidth(450);
 
 
         TableColumn col0 = new TableColumn<Boeking, Integer>("Boeking ID");
@@ -79,7 +80,7 @@ private final Scene bookingscene;
        tv.setOnMouseClicked(e->{
           Boeking boeking = (Boeking) tv.getSelectionModel().getSelectedItem();
 
-          BoekingViewScreen bvs = new BoekingViewScreen(stage, boeking,new Scene(new HBox(),900,600));
+          BookingViewScreen bvs = new BookingViewScreen(stage, boeking,new Scene(new HBox(),900,600));
           stage.setScene(bvs.getScene());
         });
 

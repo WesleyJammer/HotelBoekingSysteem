@@ -5,13 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ddfe08d2-89a0-4e5f-abe0-15fc539ce95a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/boeking/hotelboekingsysteem/Screens/BoekingViewScreen.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/boeking/hotelboekingsysteem/Screens/BookingViewScreen.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/boeking/hotelboekingsysteem/stylesheets/boekingviewscreen.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/boeking/hotelboekingsysteem/Classes/Boeking.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/boeking/hotelboekingsysteem/Classes/Boeking.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/boeking/hotelboekingsysteem/Classes/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/boeking/hotelboekingsysteem/Classes/Database.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/boeking/hotelboekingsysteem/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/boeking/hotelboekingsysteem/HelloApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/boeking/hotelboekingsysteem/Screens/BoekingViewScreen.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/boeking/hotelboekingsysteem/Screens/BookingScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/boeking/hotelboekingsysteem/Screens/BookingScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/boeking/hotelboekingsysteem/stylesheets/bookingscreen.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/boeking/hotelboekingsysteem/stylesheets/bookingscreen.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,8 +20,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="CSS File" />
         <option value="Class" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -124,6 +123,7 @@
       <workItem from="1705840355920" duration="9363000" />
       <workItem from="1705920603740" duration="5822000" />
       <workItem from="1706003894337" duration="11749000" />
+      <workItem from="1706033394010" duration="11516000" />
     </task>
     <servers />
   </component>
@@ -135,7 +135,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/example/boeking/hotelboekingsysteem/HelloApplication.java</url>
-          <line>59</line>
+          <line>60</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -145,7 +145,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/example/boeking/hotelboekingsysteem/HelloApplication.java</url>
-          <line>40</line>
+          <line>41</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
