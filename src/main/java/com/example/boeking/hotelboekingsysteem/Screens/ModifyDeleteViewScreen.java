@@ -4,23 +4,21 @@ import com.example.boeking.hotelboekingsysteem.Classes.Boeking;
 import com.example.boeking.hotelboekingsysteem.Classes.Database;
 import com.example.boeking.hotelboekingsysteem.HelloApplication;
 import com.example.boeking.hotelboekingsysteem.Models.BoekingInf;
-import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.layout.*;
+import javafx.scene.layout.FlowPane;
+import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 
-public class BookingViewScreen {
-
+public class ModifyDeleteViewScreen {
     private final Stage stage;
     private final Scene scene;
-
-    public BookingViewScreen(Stage stage, Boeking boeking, Scene scene) {
+    public ModifyDeleteViewScreen(Stage stage, Scene scene, Boeking boeking) {
 
         this.stage = stage;
         this.scene = scene;
+
 
 
         scene.getStylesheets().add(HelloApplication.class.getResource("stylesheets/boekingviewscreen.css").toString());
@@ -36,32 +34,17 @@ public class BookingViewScreen {
 
 
 
-        Label btnGaTerug = new Label();
-        btnGaTerug.setText("Ga Terug");
-        btnGaTerug.setId("btngaterug");
-        btnGaTerug.setAlignment(Pos.CENTER);
-        btnGaTerug.setPrefSize(200,40);
-        btnGaTerug.setId("btngaterug");
-
-        btnGaTerug.setOnMouseClicked(e -> {
-
-            Database db = new Database();
-
-        BookingScreen bs = new BookingScreen(stage, new Scene(new HBox(),900,600),db);
-        stage.setScene(bs.getBookingscene());
-
-        });
 
 
 
 
-
-        root.getChildren().addAll(bI,btnGaTerug);
+        root.getChildren().addAll(bI);
 
 
         scene.setRoot(root);
         stage.setScene(scene);
-        stage.setTitle("Boeking view");
+        stage.setTitle("Wijzig/Annuleer View");
+
     }
 
     public Scene getScene() {

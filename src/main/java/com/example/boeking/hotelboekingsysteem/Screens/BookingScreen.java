@@ -19,7 +19,7 @@ import javafx.stage.Stage;
 public class BookingScreen  {
 private final Stage stage;
 private final Scene bookingscene;
-private static Scene storedScene;
+
 
 
 

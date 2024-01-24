@@ -29,3 +29,16 @@
     -fx-font-size: 40;
     -fx-text-fill: #E1C8C8;
 }
+
+#tableview{
+
+    -fx-border-color: black;
+    -fx-border-width: 3 3 3 3;
+;
+}
+
+#tableview .table-row-cell{
+    -fx-border-color: black;
+    -fx-border-width: 1 0 1 0;
+}
+#tableview .table-row-cell:hover{-fx-background-color: #E1C8C8}
