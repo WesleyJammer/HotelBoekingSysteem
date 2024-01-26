@@ -95,7 +95,7 @@ private final Scene modifyDeletescene;
 
         modifyDeletescene.setRoot(root);
         stage.setScene(modifyDeletescene);
-        stage.setTitle("Wijzig/Annuleer");
+        stage.setTitle("Wijzig");
 
     }
 

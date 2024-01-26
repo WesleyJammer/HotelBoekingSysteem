@@ -9,6 +9,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 public class ModifyDeleteViewScreen {
@@ -33,12 +34,40 @@ public class ModifyDeleteViewScreen {
 
 
 
+        Label btnWijzigen = new Label();
+        btnWijzigen.setText("Ga naar wijzigen");
+        btnWijzigen.setId("btngaterug");
+        btnWijzigen.setAlignment(Pos.CENTER);
+        btnWijzigen.setPrefSize(200,40);
+
+
+        btnWijzigen.setOnMouseClicked(e -> {
+
+     ModifyScreen ms = new ModifyScreen(stage, new Scene(new VBox(),900,600),boeking);
+     stage.setScene(ms.getScene());
 
 
 
+        });
+
+       Label btnAnnuleren = new Label();
+        btnAnnuleren.setText("Ga naar Annuleren");
+        btnAnnuleren.setId("btngaterug");
+        btnAnnuleren.setPrefSize(200,40);
 
 
-        root.getChildren().addAll(bI);
+
+        btnAnnuleren.setOnMouseClicked(e -> {
+            DeleteScreen ds = new DeleteScreen(stage, new Scene(new VBox(),900,600),boeking);
+           stage.setScene(ds.getScene());
+
+
+
+       });
+
+
+
+        root.getChildren().addAll(bI,btnWijzigen,btnAnnuleren);
 
 
         scene.setRoot(root);

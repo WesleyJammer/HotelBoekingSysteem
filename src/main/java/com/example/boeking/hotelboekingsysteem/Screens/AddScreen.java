@@ -149,8 +149,8 @@ Connection conn = db.getConn();
             String email = txtEmail.getText();
             int telefoon = Integer.parseInt(txtTelefoon.getText());
             int aantalPersonen = Integer.parseInt(txtAantalPersonen.getText());
-           Timestamp aankomst = Timestamp.valueOf(dateAankomst.getValue().atStartOfDay());
-           Timestamp vertrek = Timestamp.valueOf(dateVertrek.getValue().atStartOfDay());
+            Timestamp aankomst = Timestamp.valueOf(dateAankomst.getValue().atStartOfDay());
+            Timestamp vertrek = Timestamp.valueOf(dateVertrek.getValue().atStartOfDay());
             String kamerType = cmbKamerType.getValue().toString();
 
             if (aankomst != null && vertrek != null) { db.opslaanBoeking(voorNaam,achterNaam,email, telefoon, aantalPersonen, aankomst, vertrek, kamerType);}
