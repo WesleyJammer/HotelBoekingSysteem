@@ -1,0 +1,43 @@
+#boekingcontainer{
+
+
+    -fx-background-color: #E1C8C8;
+    -fx-border-color: black;
+    -fx-border-width: 3 3 3 3;
+
+
+}
+
+
+
+#boekingid{
+
+    -fx-font-family: 'Salsa-Regular',serif;
+    -fx-font-size: 30;
+
+}
+
+#boeking{
+
+
+    -fx-font-family: 'Salsa-Regular',serif;
+    -fx-font-size: 20;
+
+}
+
+#btndeleted{
+
+    -fx-border-color: black;
+    -fx-border-width: 2 2 2 2
+
+}
+
+#btnterug {
+
+    -fx-font-family: 'Salsa-Regular', serif;
+    -fx-font-size: 20;
+    -fx-background-color: #E1C8C8;
+    -fx-border-color: black;
+    -fx-border-width: 3 3 3 3;
+
+}

@@ -10,11 +10,11 @@ import javafx.stage.Stage;
 
 public class BoekingInf extends VBox {
 
-    private Stage stage;
+
 
     private Boeking boeking;
-    public BoekingInf(Stage stage, Boeking boeking) {
-        this.stage = stage;
+    public BoekingInf( Boeking boeking) {
+
         this.boeking = boeking;
 
         Label boekingId = new Label();

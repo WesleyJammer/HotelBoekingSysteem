@@ -23,7 +23,7 @@ public class BookingViewScreen {
         this.scene = scene;
 
 
-        scene.getStylesheets().add(HelloApplication.class.getResource("stylesheets/boekingviewscreen.css").toString());
+        scene.getStylesheets().add(HelloApplication.class.getResource("stylesheets/bookingviewscreen.css").toString());
 
 
         FlowPane root = new FlowPane();
@@ -31,7 +31,7 @@ public class BookingViewScreen {
         root.setHgap(300);
         root.setVgap(20);
 
-        BoekingInf bI = new BoekingInf(stage, boeking);
+        BoekingInf bI = new BoekingInf( boeking);
 
 
 

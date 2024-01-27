@@ -22,7 +22,7 @@ public class ModifyDeleteViewScreen {
 
 
 
-        scene.getStylesheets().add(HelloApplication.class.getResource("stylesheets/boekingviewscreen.css").toString());
+        scene.getStylesheets().add(HelloApplication.class.getResource("stylesheets/modifydeleteviewscreen.css").toString());
 
 
         FlowPane root = new FlowPane();
@@ -30,13 +30,13 @@ public class ModifyDeleteViewScreen {
         root.setHgap(300);
         root.setVgap(20);
 
-        BoekingInf bI = new BoekingInf(stage, boeking);
+        BoekingInf bI = new BoekingInf( boeking);
 
 
 
         Label btnWijzigen = new Label();
         btnWijzigen.setText("Ga naar wijzigen");
-        btnWijzigen.setId("btngaterug");
+        btnWijzigen.setId("btnwijzig-annuleer");
         btnWijzigen.setAlignment(Pos.CENTER);
         btnWijzigen.setPrefSize(200,40);
 
@@ -50,9 +50,10 @@ public class ModifyDeleteViewScreen {
 
         });
 
-       Label btnAnnuleren = new Label();
+        Label btnAnnuleren = new Label();
         btnAnnuleren.setText("Ga naar Annuleren");
-        btnAnnuleren.setId("btngaterug");
+        btnAnnuleren.setId("btnwijzig-annuleer");
+        btnAnnuleren.setAlignment(Pos.CENTER);
         btnAnnuleren.setPrefSize(200,40);
 
 
@@ -65,9 +66,24 @@ public class ModifyDeleteViewScreen {
 
        });
 
+        Label btnTerug = new Label();
+        btnTerug.setText("Ga Terug");
+        btnTerug.setId("btnwijzig-annuleer");
+        btnTerug.setPrefSize(200,40);
+        btnTerug.setAlignment(Pos.CENTER);
+
+        btnTerug.setOnMouseClicked(e->{
+
+            Database db = new Database();
+
+            ModifyDeleteScreen md = new ModifyDeleteScreen(stage,new Scene(new HBox(),900,600),db);
+            stage.setScene(md.getModifyDeletescene());
+
+        });
 
 
-        root.getChildren().addAll(bI,btnWijzigen,btnAnnuleren);
+
+        root.getChildren().addAll(bI,btnWijzigen,btnAnnuleren,btnTerug);
 
 
         scene.setRoot(root);

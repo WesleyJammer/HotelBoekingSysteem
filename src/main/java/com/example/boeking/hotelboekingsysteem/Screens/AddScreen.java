@@ -16,6 +16,7 @@ import java.sql.Connection;
 import java.sql.Timestamp;
 import java.time.LocalDate;
 
+
 import static java.lang.System.currentTimeMillis;
 
 public class AddScreen {
@@ -154,6 +155,10 @@ Connection conn = db.getConn();
             String kamerType = cmbKamerType.getValue().toString();
 
             if (aankomst != null && vertrek != null) { db.opslaanBoeking(voorNaam,achterNaam,email, telefoon, aantalPersonen, aankomst, vertrek, kamerType);}
+
+
+            AddScreen a = new AddScreen(stage,new Scene(new HBox(),900,600),db);
+            stage.setScene(a.getAddscene());
 
 
         });

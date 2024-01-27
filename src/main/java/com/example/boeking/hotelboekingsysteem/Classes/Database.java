@@ -135,8 +135,12 @@ public class Database {
     public void verwijderBoeking(Boeking b){
 
         try {
+            PreparedStatement stm = this.conn.prepareStatement("CREATE TEMPORARY TABLE temp_klant AS SELECT klant_id FROM boeking WHERE boeking_id = ?");
+            stm.setInt(1, b.getBoekingId());
+            stm.executeUpdate();
 
-            PreparedStatement stm = this.conn.prepareStatement("DELETE FROM boeking_kamer WHERE boeking_id = ?");
+
+            stm = this.conn.prepareStatement("DELETE FROM boeking_kamer WHERE boeking_id = ?");
             stm.setInt(1, b.getBoekingId());
             stm.executeUpdate();
 
@@ -146,10 +150,11 @@ public class Database {
             stm.executeUpdate();
 
 
-            stm = this.conn.prepareStatement("DELETE FROM klant WHERE klant_id IN (SELECT klant_id FROM boeking WHERE boeking_id = ?)");
-            stm.setInt(1, b.getBoekingId());
+            stm = this.conn.prepareStatement("DELETE FROM klant WHERE klant_id IN (SELECT klant_id FROM temp_klant)");
             stm.executeUpdate();
 
+            stm = this.conn.prepareStatement("DROP TEMPORARY TABLE IF EXISTS temp_klant");
+            stm.executeUpdate();
 
         } catch (SQLException e) {
             throw new RuntimeException(e);
