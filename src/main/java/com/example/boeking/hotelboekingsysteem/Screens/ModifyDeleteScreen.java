@@ -4,7 +4,6 @@ import com.example.boeking.hotelboekingsysteem.Classes.Boeking;
 import com.example.boeking.hotelboekingsysteem.Classes.Database;
 import com.example.boeking.hotelboekingsysteem.HelloApplication;
 import com.example.boeking.hotelboekingsysteem.Models.Sidebar;
-import com.example.boeking.hotelboekingsysteem.Models.TableViewBoeking;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -12,14 +11,10 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
-
-import java.util.PrimitiveIterator;
 
 public class ModifyDeleteScreen {
 
@@ -54,7 +49,35 @@ private final Scene modifyDeletescene;
         tableViewContainer.setPadding(new Insets(150,50,0,0));
 
 
-        TableViewBoeking tv = new TableViewBoeking();
+        TableView tv = new TableView<>();
+        tv.setId("tableview");
+        tv.setPrefWidth(465);
+
+
+        TableColumn col0 = new TableColumn<Boeking, Integer>("Boeking ID");
+        col0.setCellValueFactory(new PropertyValueFactory<>("boekingId"));
+
+        TableColumn col1 = new TableColumn<Boeking, String>(" Voornaam");
+        col1.setCellValueFactory(new PropertyValueFactory<>("voorNaam"));
+
+        TableColumn col2 = new TableColumn<Boeking, String>(" Achternaam");
+        col2.setCellValueFactory(new PropertyValueFactory<>("achterNaam"));
+
+        TableColumn col3 = new TableColumn<Boeking, String>(" Email");
+        col3.setCellValueFactory(new PropertyValueFactory<>("email"));
+
+        TableColumn col4 = new TableColumn<Boeking, String>(" Telefoon nummer");
+        col4.setCellValueFactory(new PropertyValueFactory<>("telefoon"));
+
+        tv.getColumns().addAll(col0,col1,col2,col3,col4);
+        tv.getItems().addAll(db.geefAlleBoekingen());
+
+        tv.setOnMouseClicked(e->{
+            Boeking boeking = (Boeking) tv.getSelectionModel().getSelectedItem();
+
+            ModifyDeleteViewScreen mdv = new ModifyDeleteViewScreen(stage, new Scene(new VBox(),900,600),boeking);
+            stage.setScene(mdv.getScene());
+        });
 
         tableViewContainer.getChildren().addAll(tv);
 
