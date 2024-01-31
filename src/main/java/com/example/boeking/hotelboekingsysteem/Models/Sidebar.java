@@ -16,6 +16,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
+// door extends VBox toe te voegen kan deze sidebar dus worden gebruikt in de container van een van de schermen
 public class Sidebar extends VBox{
 
     private Stage stage;
@@ -23,6 +24,8 @@ public class Sidebar extends VBox{
 
 
 
+
+    // een apparte sidebar class aangemaakt met daarin een model voor mijn sidebar met daarin het keuze menu van de 3 hoofdschermen en daarbij een toepasselijke layout.
     public Sidebar (Stage stage, Database db) {
 
         this.stage = stage;
@@ -56,6 +59,7 @@ public class Sidebar extends VBox{
         boekingMenu.setId("menuSelect");
 
         ImageView boekingIcon = new ImageView();
+        // voor mijn keuze menu heb ik Icons gebruikt en die roep ik aan doormiddel van een setImage methode.
         boekingIcon.setImage(new Image(HelloApplication.class.getResource("icons/boeking.png").toString()));
         boekingIcon.setFitWidth(60);
         boekingIcon.setFitHeight(60);
@@ -68,6 +72,8 @@ public class Sidebar extends VBox{
         boekingIconText.setText("Boekingen");
         boekingIconText.setId("menuText");
 
+
+// verwijst naar mijn boeking scherm
         boekingMenu.setOnMouseClicked(e->{
 
 
@@ -97,6 +103,7 @@ public class Sidebar extends VBox{
         wijzigAnnuleerIconText.setText("Wijzig/Annuleer");
         wijzigAnnuleerIconText.setId("menuText");
 
+        // verwijst naar mijn wijzig/annuleer scherm
         wijzigAnnuleerMenu.setOnMouseClicked(e->{
 
                     ModifyDeleteScreen md = new ModifyDeleteScreen(stage,new Scene(new HBox(),900,600),db);
@@ -121,6 +128,7 @@ public class Sidebar extends VBox{
         toevoegenIconText.setText("Voeg Toe");
         toevoegenIconText.setId("menuText");
 
+        // verwijst naar mijn voegtoe scherm
         voegToeMenu.setOnMouseClicked( e->{
 
                     AddScreen as = new AddScreen(stage,new Scene(new HBox(),900,600),db);

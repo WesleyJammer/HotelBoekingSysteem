@@ -1,6 +1,8 @@
 
 #sidebar{
 
+
+    /*hiermee bepaal je de achtergrond kleur van een container of item*/
     -fx-background-color: #E1C8C8;
     -fx-border-color: black;
     -fx-border-width: 1 3 1 1
@@ -10,7 +12,10 @@
 
 #menuTitleText{
 
+    /*een voorbeeld waarbij de externe font die ik heb gekoppeld in mijn HelloApplication word gebruikt*/
     -fx-font-family: 'Salsa-Regular',serif;
+
+    /*met de fontsize kan je de grote van de tekst bepalen*/
     -fx-font-size: 25;
 
 }
@@ -20,8 +25,13 @@
     -fx-font-family: 'Salsa-Regular',serif;
 
 }
+/* met een hover kan je een ander effect geven aan een container of item als je er met je muis overheen gaat. dit heb ik toegpast op mijn side bar*/
 #menuSelect:hover{-fx-background-color: white;
+
+                  /* een randkleur gegeven aan de rand van de container*/
                   -fx-border-color: black;
+
+    /*de dikte bepaald van de rand van de container*/
     -fx-border-width: 2 0 2 0;
 
 }
@@ -32,6 +42,8 @@
 
  -fx-font-family: 'Salsa-Regular',serif;
     -fx-font-size: 70;
+
+    /*hiermee bepaal je de kleur van de tekst*/
     -fx-text-fill: #E1C8C8;
 
 }

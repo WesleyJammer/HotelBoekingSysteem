@@ -35,6 +35,9 @@ public class ModifyScreen {
         bookingTitleContainer.setPadding(new Insets(20, 50, 0, 0));
 
         Label inputTitle = new Label();
+        //met de b.get methode haal ik een variabele op uit de Boeking class
+        // in dit geval is het het Boeking id die ik in dit scherm als title neerzet.
+
         inputTitle.setText("Boeking ID:" + " " + b.getBoekingId());
         inputTitle.setId("bookingtitle");
 
@@ -47,7 +50,8 @@ public class ModifyScreen {
         GridPane modifyInput = new GridPane();
         modifyInput.setAlignment(Pos.CENTER);
         modifyInput.setVgap(10);
-
+// vanaf hier begin ik de b.get methodes aan te roepen op de input velden zodat de juiste gegevens uit de voorheen geplaatste boeking weergeven worden in de input velden.
+// zo weet ik bij het wijzigen van een boeking wat er in de eerste plaats ingevuld was. dit is handig voor overzicht en communicatie als de gebruiker het systeen gebruikt.
         TextField txtVoorNaam = new TextField();
         txtVoorNaam.setText(b.getVoorNaam());
         txtVoorNaam.setId("modifyinput");
@@ -80,6 +84,7 @@ public class ModifyScreen {
         tot.setText("T/M");
         tot.setId("tot");
 
+        //de zelfde methodes uit de datpickers uit het addscherm worden hier ook toegepast om de datepickers responsive te maken
         DatePicker dateVertrek = new DatePicker();
         dateVertrek.setId("modifyinput");
         Timestamp t2 = b.getVertrek();
@@ -137,6 +142,7 @@ public class ModifyScreen {
         Button btnGewijzigd = new Button("Wijzigen");
         btnGewijzigd.setId("modifyinput");
 
+        // ook voor het wijzigen van een boeking een checkbox aangemaakt zodat de gebruiker eerst een bevestiging moet geven om de boeking daadwerkelijk te wijzigen.
         CheckBox chkGewijzigd = new CheckBox("weet u zeker dat u deze boeking wilt wijzigen?");
         chkGewijzigd.setPadding(new Insets(0,0,0,90));
         chkGewijzigd.setAlignment(Pos.CENTER);
@@ -148,7 +154,9 @@ public class ModifyScreen {
 
         btnGewijzigd.setOnAction(e -> {
 
+
             if(chkGewijzigd.isSelected()){
+                // als de checkbox is aangevinkt worden de gewijzigde input gegevens vastgezet en gelinkt aan de juiste waarde uit de boekingclass en daarna meegegeven
                 b.setVoorNaam(txtVoorNaam.getText());
                 b.setAchterNaam(txtAchterNaam.getText());
                 b.setEmail(txtEmail.getText());
@@ -160,8 +168,10 @@ public class ModifyScreen {
                 b.setVertrek(v);
                 b.setKamerType(cmbKamerType.getValue().toString());
 
+                // de wijzigboeking methode uit de database class wordt nu toegepast en de boeking is gewijzigd
                 db.wijzigBoeking(b);
 
+                // na het wijzigen van de boeking word de gebruiker terug gestuurd naar de TableView van het wijzigannuleer scherm.
                 ModifyDeleteScreen md = new ModifyDeleteScreen(stage, new Scene(new HBox(), 900, 600), db);
                 stage.setScene(md.getModifyDeletescene());
 
@@ -170,6 +180,7 @@ public class ModifyScreen {
 
             else {
 
+                // als de checkbox niet is aangevinkt zal er een alert op het scherm komen dat de gebruiker dit eerst nog wel moet doen.
 
                 Alert alert = new Alert(Alert.AlertType.WARNING);
                 alert.setTitle("Waarschuwing");

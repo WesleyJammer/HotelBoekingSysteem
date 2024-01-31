@@ -33,6 +33,8 @@ public class DeleteScreen {
         root.setHgap(500);
         root.setVgap(20);
 
+
+       // Ook voor het delete scherm word de class BoekingInf aangeroepen zodat de gebruiker kan inzien welke boeking hij op het punt staat te verwijderen
         BoekingInf bI = new BoekingInf( b);
 
 
@@ -44,6 +46,7 @@ public class DeleteScreen {
         btnDeleted.setId("btndeleted");
 
 
+        // een checkbox aangemaakt die de gebruiker aanmoet vinken om een boeking te kunnen verwijderen
         CheckBox chkAkkoord = new CheckBox("Weet u zeker dat u deze boeking wilt verwijderen");
 
 
@@ -51,15 +54,20 @@ public class DeleteScreen {
 
         btnDeleted.setOnAction(e -> {
 
-            if(chkAkkoord.isSelected()){
 
+          // een methode in de deleteknop SetOnAction methode is aangemaakt om te controleren of de checkbox wel is ingevuld
+
+            if(chkAkkoord.isSelected()){
+          // als de checkbox dus aangevinkt is zal het systeem dus de VerwijderBoeking functie uit mijn database class aanroepen en dus de boeking verwijderen.
                 db.verwijderBoeking(b);
 
-
+           // ook zal hij de gebruiker weer terug sturen naar het keuze scherm waarin de gebruiker kan kiezen tussen het aanpassen van een boeking of het verwijderen van een boeking.
                 ModifyDeleteScreen md = new ModifyDeleteScreen(stage, new Scene(new HBox(), 900, 600), db);
                 stage.setScene(md.getModifyDeletescene());
 
             } else {
+
+                // als de checkbox dus niet is aangevinkt komt er een alert bericht op het scherm met daarin het verzoek dat de gebruiker eerst de checkbox heeft aangevinkt.
 
                 Alert alert = new Alert(Alert.AlertType.WARNING);
                 alert.setTitle("Waarschuwing");
@@ -83,6 +91,8 @@ public class DeleteScreen {
         btnTerug.setPrefSize(200, 40);
         btnTerug.setAlignment(Pos.CENTER);
 
+
+// eenterug knop die naar het keuzemenu van wijzigen of verwijderen gaat.
         btnTerug.setOnMouseClicked(e -> {
 
             ModifyDeleteViewScreen mdv = new ModifyDeleteViewScreen(stage, new Scene(new HBox(), 900, 600), b);

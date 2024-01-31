@@ -13,11 +13,15 @@ public class BoekingInf extends VBox {
 
 
     private Boeking boeking;
+
+    // deze class dient als model om de gegevens van een boeking die geselecteerd is uit een TableView te weergeven op het scherm met daarbij toepasselijke layout
     public BoekingInf( Boeking boeking) {
 
         this.boeking = boeking;
 
         Label boekingId = new Label();
+        // door het koppelen van de get functies uit mijn Boeking class met de juiste setText word het juiste gegeven uit de boeking weergeven op het scherm.
+        // in dit geval gaat het om het id uit de boeking.
         boekingId.setText("Boeking ID: " + " " + boeking.getBoekingId());
         boekingId.setId("boekingid");
 

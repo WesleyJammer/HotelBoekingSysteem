@@ -31,11 +31,15 @@ public class BookingViewScreen {
         root.setHgap(300);
         root.setVgap(20);
 
+
+// De class BoekingInf aangeroepen waarin een model staat waarop de gegevens van een boeking die uit een tableview word geselecteerd weergeven wordt.
+        // door het aanroepen van dit model kan het model dus op dit scherm weergeven worden en hoeft het model niet hier uitgetypt te worden.
+        // dit zorgt voor minder code in je schermen, wat handig kan zijn als je een model meerdere keren wilt gebruiken in je applicatie.
         BoekingInf bI = new BoekingInf( boeking);
 
 
 
-
+// label aangemaakt voor een terug gaan knop
         Label btnGaTerug = new Label();
         btnGaTerug.setText("Ga Terug");
         btnGaTerug.setId("btngaterug");
@@ -43,9 +47,12 @@ public class BookingViewScreen {
         btnGaTerug.setPrefSize(200,40);
         btnGaTerug.setId("btngaterug");
 
+        // de terug gaanknopt stuurt de gebruiker weer terug naar de boeking pagina waar de tableview opgesteld staat.
+        //de gebruiker zou er dan voor kunne kiezen om een andere boeking aan te klikken en dan word de gebruiker weer terug gestuurd naar deze pagina alleen dan met de gegevens van een andere boeking op het scherm.
         btnGaTerug.setOnMouseClicked(e -> {
 
             Database db = new Database();
+
 
         BookingScreen bs = new BookingScreen(stage, new Scene(new HBox(),900,600),db);
         stage.setScene(bs.getBookingscene());

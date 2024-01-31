@@ -49,6 +49,7 @@ private final Scene modifyDeletescene;
         tableViewContainer.setPadding(new Insets(150,50,0,0));
 
 
+        // ook een TableView aangemaakt voor het weergeven van boekingen alleen dient het nu voor het selecteren van een boeking om te kunnen wijzigen of verwijderen.
         TableView tv = new TableView<>();
         tv.setId("tableview");
         tv.setPrefWidth(465);
@@ -74,7 +75,7 @@ private final Scene modifyDeletescene;
 
         tv.setOnMouseClicked(e->{
             Boeking boeking = (Boeking) tv.getSelectionModel().getSelectedItem();
-
+// hier verwijst het selecteren van een boeking dus niet meer naar het scherm waar een boeking alleen wordt weergeven maar nu komen ook de optie wijzigen of verwijderen te voorschijn.
             ModifyDeleteViewScreen mdv = new ModifyDeleteViewScreen(stage, new Scene(new VBox(),900,600),boeking);
             stage.setScene(mdv.getScene());
         });

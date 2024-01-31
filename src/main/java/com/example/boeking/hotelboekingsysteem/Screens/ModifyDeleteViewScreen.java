@@ -30,6 +30,8 @@ public class ModifyDeleteViewScreen {
         root.setHgap(300);
         root.setVgap(20);
 
+
+// de BoekingInf class weer aanroepen om een boeking te kunnen weergeven op het beeldscherm
         BoekingInf bI = new BoekingInf( boeking);
 
 
@@ -41,6 +43,7 @@ public class ModifyDeleteViewScreen {
         btnWijzigen.setPrefSize(200,40);
 
 
+        // deze knop verwijst naar het scherm om een boeking te wijzigen
         btnWijzigen.setOnMouseClicked(e -> {
 
      ModifyScreen ms = new ModifyScreen(stage, new Scene(new VBox(),900,600),boeking);
@@ -58,6 +61,7 @@ public class ModifyDeleteViewScreen {
 
 
 
+        // deze knop verwijst naar het scherm om een boeking te kunnen annuleren
         btnAnnuleren.setOnMouseClicked(e -> {
             DeleteScreen ds = new DeleteScreen(stage, new Scene(new VBox(),900,600),boeking);
            stage.setScene(ds.getScene());
@@ -72,6 +76,7 @@ public class ModifyDeleteViewScreen {
         btnTerug.setPrefSize(200,40);
         btnTerug.setAlignment(Pos.CENTER);
 
+        // en met deze knop kan je weer terug gaan naar de TableView uit het wijzigenAnnuleer scherm
         btnTerug.setOnMouseClicked(e->{
 
             Database db = new Database();

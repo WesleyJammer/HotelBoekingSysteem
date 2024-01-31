@@ -4,6 +4,8 @@ import java.sql.Timestamp;
 
 public class Boeking {
 
+
+    // private variabele aangemaakt voor gegevens van een boeking
     private Integer boekingId;
     private String voorNaam;
     private String achterNaam;
@@ -16,6 +18,7 @@ public class Boeking {
 
 
 
+// de variabele meegeven aan de constructor van de class Boeking
     public Boeking(Integer boekingId, String voorNaam, String achterNaam, String email, Integer telefoon, Integer aantalPersonen, Timestamp aankomst, Timestamp vertrek, String kamerType) {
         this.boekingId = boekingId;
         this.voorNaam = voorNaam;
@@ -28,6 +31,8 @@ public class Boeking {
         this.kamerType = kamerType;
     }
 
+
+    // getters en setter methodes aangemaakt voor de variabele zodat deze ergens anders in de applicatie aangeroepen kunnen worden en ook worden gebruikt.
     public Integer getBoekingId() {
         return boekingId;
     }
