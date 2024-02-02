@@ -44,7 +44,7 @@ class DatabaseTest {
         assertFalse(boekingen.isEmpty());
 
         // we halen de 7e(0 telt ook als cijfer) boeking hier op uit de database en de test werkt want alleen door de juiste gegevens hieronder mee te geven werkt de test anders komt er een foutmelding.
-        Boeking b = boekingen.get(6);
+        Boeking b = boekingen.get(1);
         assertEquals("John", b.getVoorNaam());
         assertEquals("dirk", b.getAchterNaam());
         assertEquals("e@mail.com", b.getEmail());
@@ -69,7 +69,7 @@ class DatabaseTest {
 
 
         // hier word weer de 7e boeking opgehaald en als je hieronder andere gegevens invult dan er eerst stonden en dan de test runt dan zie je in de database de andere gegevens verschijnen.
-        Boeking b = boekingen.get(6);
+        Boeking b = boekingen.get(0);
         b.setVoorNaam("Pieter");
         b.setAchterNaam("Aad");
         b.setEmail("r@mail.com");

@@ -28,13 +28,13 @@ public class HelloApplication extends Application {
         Scene scene = new Scene(root, 900, 600);
 
         //de ccs file die toebehoort aan dit scherm gekoppeld aan dit scherm zodat de styling zoals kleuren toegepast worden.
-        scene.getStylesheets().add(HelloApplication.class.getResource("stylesheets/helloapplication.css").toString());
+        scene.getStylesheets().add(getClass().getResource("stylesheets/HelloApplication.css").toString());
 
         // De de grote van de stage vast gezet. het scherm kan dus niet groter of kleiner gemaakt worden bij gebruik van de applicatie.
         stage.setResizable(false);
 
         // Een exterte font(lettertype stijl) gekoppeld aan de applicatie. hierna hoef ik hem alleen nog maar aan te roepen in de css files
-        Font font = Font.loadFont(HelloApplication.class.getResource("fonts/Salsa-Regular.ttf").toString(), 20);
+        Font font = Font.loadFont(getClass().getResource("fonts/Salsa-Regular.ttf").toString(), 20);
 
        // de class Database aangeroepen zodat hij in dit scherm gebruikt kan worden
         Database db = new Database();
