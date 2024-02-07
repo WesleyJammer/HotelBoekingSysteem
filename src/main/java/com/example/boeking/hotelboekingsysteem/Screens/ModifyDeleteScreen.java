@@ -52,7 +52,7 @@ private final Scene modifyDeletescene;
         // ook een TableView aangemaakt voor het weergeven van boekingen alleen dient het nu voor het selecteren van een boeking om te kunnen wijzigen of verwijderen.
         TableView tv = new TableView<>();
         tv.setId("tableview");
-        tv.setPrefWidth(465);
+        tv.setPrefWidth(540);
 
 
         TableColumn col0 = new TableColumn<Boeking, Integer>("Boeking ID");

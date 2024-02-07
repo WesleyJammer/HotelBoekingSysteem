@@ -61,7 +61,7 @@ private final Scene bookingscene;
         tv.setId("tableview");
 
         // breedte van het tabellen scherm instellen
-        tv.setPrefWidth(465);
+        tv.setPrefWidth(540);
 
 // kolommen van het tabellen scherm instellen op basis van het aanroepen van De class Boeking waarin de variabelen staan van een beoking en de juiste datatype.
         // ook geef ik een naam voor het desbtreffende kolom
