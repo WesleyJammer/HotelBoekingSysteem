@@ -17,13 +17,12 @@ public class Database {
         this.conn = conn;
 
 // de juiste database gekoppeld aan mijn applicatie
-        String url = "jdbc:mysql://localhost:3306/hotel_boeking_systeem?user=root&password=";
 
         try {
-            //
-
-            // de juiste connectie aanroepen
-            conn = DriverManager.getConnection(url);
+            // de juiste url aanroepen voor online database
+            String url = "jdbc:mysql://bp2.adainforma.tk/bp2_hotelboekingsysteem";
+            // de juiste connectie aanroepen met de url gebruikersnaam en wachtwoord
+            this.conn = DriverManager.getConnection(url, "hotelboekingsysteem", "6obWx681%");
 
 
         } catch (SQLException e) {

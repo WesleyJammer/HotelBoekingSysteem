@@ -12,8 +12,7 @@
     <list default="true" id="ddfe08d2-89a0-4e5f-abe0-15fc539ce95a" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/HotelBoekingSysteem_jar/HotelBoekingSysteem.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/boeking/hotelboekingsysteem/Screens/BookingScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/boeking/hotelboekingsysteem/Screens/BookingScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/boeking/hotelboekingsysteem/Screens/ModifyDeleteScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/boeking/hotelboekingsysteem/Screens/ModifyDeleteScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/boeking/hotelboekingsysteem/Classes/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/boeking/hotelboekingsysteem/Classes/Database.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -330,6 +329,11 @@
       <workItem from="1707210353057" duration="1496000" />
       <workItem from="1707297050308" duration="156000" />
       <workItem from="1707299782139" duration="1648000" />
+      <workItem from="1708345276753" duration="53000" />
+      <workItem from="1708607441434" duration="100000" />
+      <workItem from="1709803249639" duration="45000" />
+      <workItem from="1710230948729" duration="632000" />
+      <workItem from="1710238956861" duration="2925000" />
     </task>
     <servers />
   </component>
